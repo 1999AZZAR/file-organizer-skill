@@ -1,32 +1,40 @@
 ---
-name: file-organizer
-description: Organize files in directories by grouping them into folders based on their extensions or categories. Use when the user wants to clean up folders like Downloads, Desktop, or sort messy directories.
+name: file-organizer-skill
+description: Organize files in directories by grouping them into folders based on their extensions or date. Includes Dry-Run, Recursive, and Undo capabilities.
 ---
 
-# File Organizer
+# File Organizer (Gold Standard)
 
-This skill helps you organize messy directories by grouping files into logical subfolders based on their types.
+## Features
+- **Smart Sorting**: Group by Extension (Default) or Date (Year/Month).
+- **Safety**: Conflict resolution (auto-rename), Dry Run mode, and Undo capability.
+- **Deep Clean**: Recursive scanning option.
+- **Audit**: Generates `organize_history.json` for tracking.
 
-## Workflows
+## Usage
 
-### 1. Simple Organization
-To organize a directory using default categories:
-1. Identify the target directory.
-2. Run the organization script: `python3 scripts/organize.py <directory>`
+### Basic Sort (by Extension)
+```bash
+python3 scripts/organize.py /path/to/folder
+```
 
-### 2. Custom Organization
-To specify custom mappings for extensions:
-1. Define a JSON mapping of folder names to lists of extensions.
-2. Run the script with the `--mapping` flag:
-   `python3 scripts/organize.py <directory> --mapping '{"Photos": [".jpg", ".png"], "Text": [".txt"]}'`
+### Date Sort (Year/Month)
+Great for photos or archives.
+```bash
+python3 scripts/organize.py /path/to/folder --date
+```
 
-## Resources
+### Dry Run (Simulate)
+See what *would* happen without moving anything.
+```bash
+python3 scripts/organize.py /path/to/folder --dry-run
+```
 
-- **`scripts/organize.py`**: A Python script that performs the actual file movement.
-- **`references/categories.md`**: A list of common file extensions and their suggested categories.
+### Undo
+Revert changes using the history file.
+```bash
+python3 scripts/organize.py --undo /path/to/folder/organize_history.json
+```
 
-## Best Practices
-
-- Always verify the target directory exists before running the script.
-- If the user specifies a directory that contains important system files, warn them before proceeding.
-- Use `references/categories.md` to help the user decide how to group their files if they are unsure.
+## Config
+Modify `scripts/organize.py` `get_default_mapping()` to add custom extensions.
