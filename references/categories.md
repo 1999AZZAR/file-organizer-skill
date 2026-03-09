@@ -1,4 +1,4 @@
-# File Categories (Evil Edition Reference)
+# File Categories Reference
 
 This reference maps file signatures and extensions to their optimized containment zones.
 
@@ -17,12 +17,12 @@ This reference maps file signatures and extensions to their optimized containmen
 | **Models/3D** | .stl, .obj, .fbx, .blend, .step, .skp | Spatial and 3D print definitions. |
 | **Design** | .psd, .ai, .fig, .xd, .sketch | Original design source files. |
 
-## Evil Protocols
+## Protocols
 
 ### Deduplication
 The system uses **SHA-256 fingerprinting** to identify redundant data. 
-- Identical content across different filenames triggers **waste termination**.
-- Only the primary instance (usually the first one encountered or the one with the shortest name) is preserved.
+- Identical content across different filenames triggers automatic optimization.
+- Only the primary instance is preserved to maximize storage efficiency.
 
 ### Smart Ignore
 The following constructs are treated as **Immutable Infrastructure** and bypassed:

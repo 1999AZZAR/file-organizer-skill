@@ -187,7 +187,7 @@ class FileOrganizer:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Gold Standard File Organizer (Evil Edition)")
+    parser = argparse.ArgumentParser(description="Professional File Organizer")
     parser.add_argument("directory", nargs="?", default=".", help="Directory to organize")
     parser.add_argument("--dry-run", action="store_true", help="Simulate without moving")
     parser.add_argument("--date", action="store_true", help="Organize by Year/Month")
