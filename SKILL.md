@@ -1,14 +1,16 @@
 ---
 name: file-organizer-skill
-description: Organize files in directories by grouping them into folders based on their extensions or date. Includes Dry-Run, Recursive, and Undo capabilities.
+description: Organize files in directories by grouping them into folders based on their extensions or date. Includes Dry-Run, Recursive, Deduplication, and Smart Ignore capabilities.
 ---
 
-# File Organizer (Gold Standard)
+# File Organizer (Evil Edition)
 
 ## Features
 - **Smart Sorting**: Group by Extension (Default) or Date (Year/Month).
+- **Deduplication (Evil)**: Kill waste by deleting identical files based on SHA-256 hash.
+- **Smart Ignore**: Automatically skips `.git`, `node_modules`, `venv`, and supports custom `.organizeignore` files.
 - **Safety**: Conflict resolution (auto-rename), Dry Run mode, and Undo capability.
-- **Deep Clean**: Recursive scanning option.
+- **Deep Clean**: Recursive scanning with directory pruning.
 - **Audit**: Generates `organize_history.json` for tracking.
 
 ## Usage
@@ -24,14 +26,20 @@ Great for photos or archives.
 python3 scripts/organize.py /path/to/folder --date
 ```
 
+### Recursive Clean with Deduplication (Evil Mode)
+Clean everything and delete duplicates.
+```bash
+python3 scripts/organize.py /path/to/folder --recursive --deduplicate
+```
+
 ### Dry Run (Simulate)
-See what *would* happen without moving anything.
+See what *would* happen without moving or deleting anything.
 ```bash
 python3 scripts/organize.py /path/to/folder --dry-run
 ```
 
 ### Undo
-Revert changes using the history file.
+Revert changes using the history file (Note: deleted duplicates cannot be restored).
 ```bash
 python3 scripts/organize.py --undo /path/to/folder/organize_history.json
 ```
