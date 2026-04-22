@@ -27,13 +27,16 @@ class FileOrganizer:
 
     def get_default_mapping(self):
         return {
-            "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp", ".heic"],
-            "Documents": [".pdf", ".doc", ".docx", ".txt", ".rtf", ".xls", ".xlsx", ".ppt", ".pptx", ".csv", ".odt"],
-            "Audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a"],
-            "Video": [".mp4", ".mkv", ".mov", ".avi", ".webm"],
-            "Archives": [".zip", ".tar", ".gz", ".7z", ".rar", ".iso"],
-            "Code": [".py", ".js", ".ts", ".html", ".css", ".json", ".yml", ".md", ".sh", ".sql", ".php"],
-            "Executables": [".exe", ".msi", ".dmg", ".app", ".deb", ".rpm"]
+            "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp", ".heic", ".tiff", ".raw"],
+            "Documents": [".pdf", ".doc", ".docx", ".txt", ".rtf", ".xls", ".xlsx", ".ppt", ".pptx", ".csv", ".odt", ".epub"],
+            "Audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a", ".wma"],
+            "Video": [".mp4", ".mkv", ".mov", ".avi", ".webm", ".wmv", ".flv", ".m4v"],
+            "Archives": [".zip", ".tar", ".gz", ".7z", ".rar", ".iso", ".bz2", ".xz"],
+            "Code": [".py", ".js", ".ts", ".html", ".css", ".json", ".yml", ".yaml", ".md", ".sh", ".sql", ".php", ".rs", ".go", ".c", ".cpp", ".h", ".java"],
+            "Executables": [".exe", ".msi", ".dmg", ".app", ".deb", ".rpm", ".bin", ".appimage"],
+            "Fonts": [".ttf", ".otf", ".woff", ".woff2", ".eot"],
+            "Models_3D": [".stl", ".obj", ".fbx", ".blend", ".step", ".skp"],
+            "Design": [".psd", ".ai", ".fig", ".xd", ".sketch"]
         }
 
     def load_ignore_config(self):

@@ -1,3 +1,8 @@
+---
+name: file-organizer
+description: Professional file organization tool. Supports smart sorting by extension or date, SHA-256 deduplication, recursive scanning, and safety features like dry runs and undo capabilities.
+---
+
 # File Organizer (Professional Edition)
 
 ## Features
@@ -35,3 +40,6 @@ Revert changes using the history file (Note: deleted duplicates cannot be restor
 ```bash
 python3 scripts/organize.py --undo /path/to/folder/organize_history.json
 ```
+
+## Reference Materials
+- [File Categories](references/categories.md) - Mapping of file extensions to zones.
