@@ -1,8 +1,0 @@
-{
-  "name": "file-organizer",
-  "version": "1.0.0",
-  "description": "Professional file organization tool with smart sorting, SHA-256 deduplication, and safety features.",
-  "author": "OpenClaw",
-  "binaries": ["python3"],
-  "python_dependencies": []
-}
