@@ -1,0 +1,4 @@
+interface:
+  display_name: "File Organizer"
+  short_description: "Organize files in directories based on extensions or categories."
+  default_prompt: "Organize my Downloads folder."
